@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+
+scripts:
+  - docker build -t jmeroth/node .
+  - docker images jmeroth/node
