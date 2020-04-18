@@ -5,3 +5,12 @@ services:
 scripts:
   - docker build -t jmeroth/node .
   - docker images jmeroth/node
+
+before_deploy:
+  - docker login -u jmeroth -p Jack2007*
+
+deploy:
+  provider: script
+  script: docker push jmeroth/node
+  on:
+    branch: master
